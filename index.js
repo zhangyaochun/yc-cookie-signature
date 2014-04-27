@@ -7,6 +7,7 @@ var crypto = require('crypto');
 var sign = exports.sign = function(val, secret) {
     //TODO no arguments check
     //i use createHmac
+    //Hash Message Authentication Code
     return val + '.' + crypto.createHmac('sha256', secret)
             .update(val)
             .digest('base64')
